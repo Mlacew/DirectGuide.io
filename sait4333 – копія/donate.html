@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержать проект - DIRECT GUIDE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для страницы доната */
+        .donate-container {
+            width: 100%;
+            max-width: 720px;
+            background-color: #060606;
+            border: 1px solid #141414;
+            border-top: 4px solid #ff0000;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-block;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: #ff0000; }
+        
+        .donate-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .donate-title span { color: #ff0000; }
+
+        .donate-desc {
+            color: #888888;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        /* Блок кошелька */
+        .crypto-card {
+            background-color: #0b0b0b;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .crypto-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: #0088cc; /* Фирменный цвет TON */
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .wallet-address-box {
+            display: flex;
+            background: #030303;
+            border: 1px solid #141414;
+            border-radius: 6px;
+            padding: 12px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .wallet-address {
+            color: #ffffff;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            text-align: left;
+            user-select: all;
+        }
+        .copy-btn {
+            background: #ff0000;
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .copy-btn:hover {
+            background: #cc0000;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Блок Телеграма */
+        .tg-block {
+            border-top: 1px dashed #141414;
+            padding-top: 30px;
+            margin-top: 20px;
+        }
+        .tg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid #222;
+            color: #cccccc;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .tg-btn:hover {
+            border-color: #ff0000;
+            color: #ffffff;
+            background-color: rgba(255, 0, 0, 0.03);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+        }
+        .tg-btn span { color: #ff0000; }
+    </style>
+</head>
+<body>
+
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <h3>НАВИГАЦИЯ</h3>
+            <button class="close-btn" id="closeMenuBtn">&times;</button>
+        </div>
+        <ul class="menu-links">
+            <li><a href="index.html" class="menu-item"><span class="icon">🔍</span> На главную</a></li>
+            <li><a href="https://t.me/directguide" target="_blank" class="menu-item"><span class="icon">📢</span> Канал проекта</a></li>
+            <li><a href="#" class="menu-item"><span class="icon">❤️</span> Поддержать проект</a></li>
+        </ul>
+        <div class="menu-footer"><p>© 2026 DIRECT GUIDE</p></div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <header class="header-brand">
+        <div class="top-row">
+            <button class="menu-toggle-btn" id="openMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="site-title">DIRECT <span>GUIDE</span></div>
+        </div>
+    </header>
+
+    <main style="margin-top: 140px;">
+        <div class="donate-container">
+            <a href="index.html" class="back-link">← Вернуться на главную</a>
+            
+            <h1 class="donate-title">ПОДДЕРЖКА <span>ПРОЕКТА</span></h1>
+            <p class="donate-desc">
+                DIRECT GUIDE развивается исключительно на энтузиазме команды и добровольных пожертвованиях пользователей. Любая ваша поддержка помогает нам оплачивать серверы, обновлять базу данных и выпускать новые инструкции.
+            </p>
+            
+            <div class="crypto-card">
+                <div class="crypto-label">💎 TONKEEPER (TON NETWORK)</div>
+                <div class="wallet-address-box">
+                    <div class="wallet-address" id="walletAddr">UQD6v9ktcXLJfRN79RERBIUIlo0PtUuoiCNRvN1mQgIWGn7V</div>
+                    <button class="copy-btn" id="copyBtn">КОПИРОВАТЬ</button>
+                </div>
+            </div>
+
+            <div class="tg-block">
+                <p style="color: #555; font-size: 0.9rem; margin-bottom: 15px;">Следите за обновлениями базы данных в официальном источнике:</p>
+                <a href="https://t.me/directguide" target="_blank" class="tg-btn">
+                    <span>📢</span> @directguide
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            const addressText = document.getElementById('walletAddr').textContent;
+            navigator.clipboard.writeText(addressText).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = 'СКОПИРОВАНО!';
+                btn.style.background = '#00ff66';
+                btn.style.color = '#000000';
+                
+                setTimeout(() => {
+                    btn.textContent = 'КОПИРОВАТЬ';
+                    btn.style.background = '#ff0000';
+                    btn.style.color = '#ffffff';
+                }, 2000);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

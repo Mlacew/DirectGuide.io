@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIRECT GUIDE - Вопросы и Ответы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Анимированный неоновый бэкграунд -->
+    <div class="bg-graph-matrix">
+        <div class="neon-chart-pulse-1"></div>
+        <div class="neon-chart-pulse-2"></div>
+    </div>
+
+    <!-- Боковое меню (Бургер) -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <button class="close-btn" id="closeMenuBtn">&times;</button>
+            <h3>НАВИГАЦИЯ</h3>
+        </div>
+        <ul class="menu-links">
+            <li><a href="#" id="menuHomeBtn"><span class="icon">🔍</span> На главную</a></li>
+            <li><a href="https://t.me/directguide" target="_blank"><span class="icon">📢</span> Канал проекта</a></li>
+            <li><a href="#" id="menuDonateBtn"><span class="icon">❤️</span> Поддержать проект</a></li>
+        </ul>
+        <div class="menu-footer"><p>© 2026 DIRECT GUIDE</p></div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Шапка сайта -->
+    <header class="header-brand">
+        <div class="top-row">
+            <button class="menu-toggle-btn" id="openMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="site-title" id="logoHomeBtn">DIRECT <span>GUIDE</span></div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН: ПОИСК И СПИСОК КАРТОЧЕК -->
+    <main id="mainSearchContainer">
+        <div class="search-section">
+            <h1 class="main-hero-title">DIRECT <span>GUIDE</span></h1>
+            <p class="search-hint">Единая база точных ответов и технических инструкций</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Введите ключевое слово для поиска..." autocomplete="off">
+                <div class="search-glow"></div>
+            </div >
+
+            <!-- Быстрые теги -->
+            <div class="quick-tags-container">
+                <button class="quick-tag-btn" onclick="fillSearch('Telegram')">#Telegram</button>
+                <button class="quick-tag-btn" onclick="fillSearch('CS2')">#CS2 / Скины</button>
+                <button class="quick-tag-btn" onclick="fillSearch('Крипта')">#Криптовалюта</button>
+                <button class="quick-tag-btn" onclick="fillSearch('CORS')">#Фронтенд</button>
+            </div>
+        </div>
+
+        <!-- Список превью статей (Интерактивный) -->
+        <section class="articles-wrapper" id="articlesSection">
+            <div class="articles-list">
+                
+                <!-- Карточка 1: Telegram Stars -->
+                <div class="article-item" data-article="telegram-stars">
+                    <div class="article-meta">
+                        <span class="tag">Telegram</span>
+                        <span class="date">🔥 Рекомендуем</span>
+                    </div>
+                    <h3 class="title">Как бесплатно получить звезды Телеграм (Telegram Stars)?</h3>
+                    <p class="description">Реальный фарминг внутренней валюты Telegram через бота Rewaro. Пошаговое руководство, моментальный бонус в 4000 кристаллов и заработок на реферальной системе без лимитов.</p>
+                </div>
+
+                <!-- Карточка 2: Skins Cash -->
+                <div class="article-item" data-article="skins-cash">
+                    <div class="article-meta">
+                        <span class="tag">CS2 / Заработок</span>
+                        <span class="date">🔥 Тренды</span>
+                    </div>
+                    <h3 class="title">Как выгодно продать скины CS2 за реальные деньги на Skins.Cash?</h3>
+                    <p class="description">Полный обзор сервиса мгновенных выплат Skins.Cash. Инструкция, как безопасно превратить скины в реальный кэш, получить бонус к сделке и моментально вывести средства на карту или крипту.</p>
+                </div>
+
+                <!-- Карточка 3: Grid Bot -->
+                <div class="article-item" data-article="grid-bot">
+                    <div class="article-meta">
+                        <span class="tag">Трейдинг / Крипта</span>
+                        <span class="date">Инструкция</span>
+                    </div>
+                    <h3 class="title">Как запустить автоматического Grid-бота на бирже?</h3>
+                    <p class="description">Настройка сеточной стратегии торговли в боковом тренде (флэт). Как правильно выставить верхнюю/нижнюю границы цены, рассчитать шаг сетки и автоматизировать спотовую торговлю.</p>
+                </div>
+
+                <!-- Карточка 4: CORS -->
+                <div class="article-item" data-article="cors-error">
+                    <div class="article-meta">
+                        <span class="tag">Фронтенд / Веб</span>
+                        <span class="date">Решение</span>
+                    </div>
+                    <h3 class="title">Как исправить ошибку CORS в браузере раз и навсегда?</h3>
+                    <p class="description">Разбор блокировки кросс-доменных запросов. Как правильно прописать заголовки Access-Control-Allow-Origin на сервере или обойти ограничение через проксирование на фронтенде.</p>
+                </div>
+
+                <!-- Карточка 5: Telegram Premium -->
+                <div class="article-item" data-article="tg-premium">
+                    <div class="article-meta">
+                        <span class="tag">Telegram</span>
+                        <span class="date">Лайфхак</span>
+                    </div>
+                    <h3 class="title">Как купить Telegram Premium со скидкой до 50%?</h3>
+                    <p class="description">Официальные способы легальной экономии на подписке. Использование региональных цен через Premium Bot, покупка подарочных кодов за криптовалюту TON и участие в раздачах от каналов.</p>
+                </div>
+
+                <!-- Карточка 6: Crypto Safety -->
+                <div class="article-item" data-article="crypto-safety">
+                    <div class="article-meta">
+                        <span class="tag">Крипта / Безопасность</span>
+                        <span class="date">Важно</span>
+                    </div>
+                    <h3 class="title">Как защитить криптокошелек от слива баланса и фишинга?</h3>
+                    <p class="description">Правила безопасности для Web3-пользователей. Что такое revoking смарт-контрактов, почему нельзя подписывать подозрительные транзакции «Set Approval For All» и как работают аппаратные кошельки.</p>
+                </div>
+
+                <!-- Карточка 7: CS2 Optimization -->
+                <div class="article-item" data-article="cs2-fps">
+                    <div class="article-meta">
+                        <span class="tag">CS2 / Настройка</span>
+                        <span class="date">Гайд</span>
+                    </div>
+                    <h3 class="title">Оптимизация CS2: как повысить FPS и убрать микрофризы?</h3>
+                    <p class="description">Лучшие параметры запуска (launch options) для Counter-Strike 2. Настройка скрытых параметров графики, очистка кэша шейдеров DirectX и оптимизация Windows под процессоры AMD/Intel для идеальной плавности.</p>
+                </div>
+
+                <!-- Карточка 8: Git Guide -->
+                <div class="article-item" data-article="git-guide">
+                    <div class="article-meta">
+                        <span class="tag">Фронтенд / Инструменты</span>
+                        <span class="date">Для новичков</span>
+                    </div>
+                    <h3 class="title">Шпаргалка по командам Git: от инициализации до деплоя</h3>
+                    <p class="description">Полный список самых важных Git-команд, которые пригодятся каждому разработчику. Как правильно делать коммиты, решать конфликты при слиянии веток (merge) и откатывать изменения без потери кода.</p>
+                </div>
+
+                <!-- Карточка 9: P2P Trading -->
+                <div class="article-item" data-article="p2p-trading">
+                    <div class="article-meta">
+                        <span class="tag">Трейдинг / Крипта</span>
+                        <span class="date">Безопасность</span>
+                    </div>
+                    <h3 class="title">Как безопасно покупать крипту на P2P и не поймать блок карты?</h3>
+                    <p class="description">Разбор мошеннических схем на P2P-площадках. Как избежать «треугольников», проверять контрагентов, защитить свою банковскую карту от блокировок и правильно подавать апелляции на биржах.</p>
+                </div>
+
+                <!-- Карточка 10: API Performance -->
+                <div class="article-item" data-article="api-speed">
+                    <div class="article-meta">
+                        <span class="tag">Фронтенд / Веб</span>
+                        <span class="date">Продвинутый</span>
+                    </div>
+                    <h3 class="title">Ускорение загрузки данных: Оптимизация API-запросов</h3>
+                    <p class="description">Техники ускорения веб-приложений. Разбор методов кэширования ответов, применение технологий Debounce и Throttle, а также переход с тяжелых REST API запросов на GraphQL и WebSocket.</p>
+                </div>
+
+                <!-- Карточка 11: Bybit -->
+                <div class="article-item" data-article="bybit-partner">
+                    <div class="article-meta">
+                        <span class="tag">Крипта / Инструкция</span>
+                        <span class="date">🔥 Популярное</span>
+                    </div>
+                    <h3 class="title">Как правильно купить криптовалюту на бирже Bybit: пошаговый гайд</h3>
+                    <p class="description">Подробная инструкция по работе с биржей Bybit. Как быстро пройти верификацию аккаунта, безопасно купить стейблкоины USDT через P2P-платформу и обменять их на Bitcoin без скрытых комиссий.</p>
+                </div>
+
+                <!-- Карточка 12: CryptoBot Telegram -->
+                <div class="article-item" data-article="cryptobot-ref">
+                    <div class="article-meta">
+                        <span class="tag">Telegram / P2P</span>
+                        <span class="date">⚡ Быстро</span>
+                    </div>
+                    <h3 class="title">Как покупать и хранить криптовалюту прямо в Telegram через Crypto Bot</h3>
+                    <p class="description">Полноценный мануал по использованию встроенного Telegram-маркета Crypto Bot. Покупка криптовалюты TON, USDT и BTC прямо в мессенджере с гарантией безопасности сделок и выводом без KYC.</p>
+                </div>
+
+                <!-- Карточка 13: Market CS2 -->
+                <div class="article-item" data-article="market-cs2-ref">
+                    <div class="article-meta">
+                        <span class="tag">CS2 / Скины</span>
+                        <span class="date">🔥 Тренды</span>
+                    </div>
+                    <h3 class="title">Гайд: Как выгодно покупать и продавать скины CS2 за реальные деньги</h3>
+                    <p class="description">Разбор работы с торговой площадкой Market.CSGO. Инструкция по безопасной авторизации через Steam API, настройка Trade-ссылки, покупка скинов со скидкой до 40% и моментальный вывод средств на карту.</p>
+                </div>
+
+                <!-- Карточка 14: Beget Hosting -->
+                <div class="article-item" data-article="beget-ref">
+                    <div class="article-meta">
+                        <span class="tag">Веб / Разработка</span>
+                        <span class="date">Инструменты</span>
+                    </div>
+                    <h3 class="title">Как арендовать дешевый VPS/VDS сервер и разместить свой сайт на Beget</h3>
+                    <p class="description">Пошаговое руководство для веб-разработчиков по запуску удаленного сервера. Выбор операционной системы Ubuntu/Debian, настройка конфигурации железа под проекты и особенности посуточной тарификации.</p>
+                </div>
+
+                <!-- Карточка 15: Payeer Wallet -->
+                <div class="article-item" data-article="payeer-ref">
+                    <div class="article-meta">
+                        <span class="tag">Способы оплаты</span>
+                        <span class="date">Инструкция</span>
+                    </div>
+                    <h3 class="title">Электронный кошелек PAYEER: Инструкция по созданию и пополнению</h3>
+                    <p class="description">Инструкция по работе с международной платежной системой PAYEER. Хранение фиата (USD, EUR) и криптовалюты в одном месте, быстрый внутренний обмен и совершение платежей без обязательной верификации.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ЭКРАН ПРОСМОТРА КОНКРЕТНОЙ СТАТЬИ -->
+    <main id="articleViewerContainer">
+        <div class="article-view-page">
+            <button class="back-to-search-btn" id="backToSearchBtn">← Вернуться к поиску</button>
+            <div id="dynamicMeta"></div>
+            <h1 class="dynamic-title" id="dynamicTitle">Заголовок</h1>
+            <div class="dynamic-content" id="dynamicContent"></div>
+        </div>
+    </main>
+
+    <!-- Боковая кнопка "Важно прочитать" и её модальное окно -->
+<div class="sticky-notice-wrapper" id="stickyNoticeWidget">
+    <button class="sticky-notice-btn" id="openNoticeBtn">
+        <span class="icon">📢</span> Важно прочитать
+    </button>
+    
+    <div class="notice-modal" id="noticeModal">
+        <div class="notice-modal-header">
+            <h4>ОБРАТИТЕ ВНИМАНИЕ</h4>
+            <button class="notice-close-btn" id="closeNoticeBtn">&times;</button>
+        </div>
+        <div class="notice-modal-body">
+            <p>Наш проект <strong>DIRECT GUIDE</strong> только запустился! На данный момент статей в базе ещё мало, но мы ежедневно работаем над её наполнением.</p>
+            <div class="highlight-box" style="margin: 15px 0 0 0; font-size: 0.9rem;">
+                Если вы хотите лично посоветоваться, задать технический вопрос или предложить свою полезную статью — переходите в наш официальный Telegram-канал!
+            </div>
+            <a href="https://t.me/directguide" target="_blank" class="action-button tg-blue" style="margin-top: 15px; padding: 10px;">
+                📢 Перейти в @directguide
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- Вспомогательный скрипт для тегов + Основной файл логики -->
+    <script>
+        function fillSearch(category) {
+            const searchInput = document.getElementById('searchInput');
+            if(searchInput) {
+                searchInput.focus(); // Принудительно открываем блок со статьями
+                searchInput.value = category;
+                // Инициируем событие "input", чтобы отработали фильтры в script.js
+                const event = new Event('input', { bubbles: true });
+                searchInput.dispatchEvent(event);
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
